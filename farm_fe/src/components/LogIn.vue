@@ -15,22 +15,22 @@
 </template>
 
 <script>
-export default{
-  name: 'LogIn',
+    export default{
+        name: 'LogIn',
 
-  data: function(){
-  },
+        data: function(){
+        },
 
-  methods:{
-      processLogInUser: function(){
-          
-      }
-  },
-  
-  created: function(){
-  }
+        methods:{
+            processLogInUser: function(){
+                
+            }
+        },
+        
+        created: function(){
+        }
 
-}
+    }
 </script>
 
 <style>

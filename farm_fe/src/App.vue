@@ -2,17 +2,20 @@
 
   <div id="app" class="app">
     
+    <div class="contLogo">
+      <img src="./assets/LogoFarmHome.jpeg" alt=".../" />
+    </div>
+
     <div class="header">
-    
-      <h1>FarmHome</h1>
-      
       <nav>
         <button v-if="is_auth" > Inicio </button>
         <button v-if="is_auth" > Cuenta </button>        
         <button v-if="is_auth" v-on:click="carritoF" > Carrrito </button>
+        <button v-if="is_auth" v-on:click="homeFrutas" > Frutas </button>
         <button v-if="is_auth" > Cerrar Sesión </button>
         <button v-if="!is_auth" v-on:click="loadLogIn" > Iniciar Sesión </button>
         <button v-if="!is_auth" v-on:click="loadSignUp" > Registrarse </button>
+    
       </nav>
     </div>
 
@@ -37,7 +40,9 @@
 
     data: function(){
       return{
-        is_auth: true
+        is_auth: true,
+        ponerLogo: true,
+        ponerHeader: true
       }
     },
 
@@ -57,7 +62,14 @@
         this.$router.push({name: "signUp"})
       },
       carritoF: function(){
+        this.ponerLogo = false
+        this.ponerHeader = false
         this.$router.push({name: "miniCart"})
+      },
+      homeFrutas: function(){
+        this.ponerLogo = true
+        this.ponerHeader = true
+        this.$router.push({name: "Item"})
       },
       completedLogIn: function(data) {},
       completedSignUp: function(data) {},
@@ -79,23 +91,36 @@
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
   }
+  
+  .contLogo{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
 
-  .main-component{
-    background: rgba(75, 74, 78, 0.349);
+  .contLogo img{
+      height: 10vh;
   }
 
   .header{
-    margin: 0;
-    padding: 0;
     width: 100%;
-    height: 10vh;
-    min-height: 100px;
+    height: 5vh;
 
-    background-color: #0b3b02 ;
-    color:#E5E7E9;
-    display: flex;                                                                                  
-    justify-content: space-between;
-    align-items: center;
+    /*background-color: #0b3b02 ;
+    color:#E5E7E9;*/
+    
   }
   
+  .header nav {
+    margin-top: 20px;
+    display: flex;                                                                                  
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .header nav button{
+    padding: 10px 20px;
+  }
+
 </style>

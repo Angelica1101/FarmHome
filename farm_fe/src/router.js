@@ -1,9 +1,11 @@
-import { Namespaces }                         from '@vue/compiler-core';
-import { createRouter, createWebHashHistory } from 'vue-router'
-import App                                    from './App.vue'
-import LogIn                                  from './components/LogIn.vue'
-import SignUp                                 from './components/SignUp.vue'
+import { Namespaces } from '@vue/compiler-core';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+
+import App from './App.vue'
+import LogIn from './components/LogIn.vue'
+import SignUp from './components/SignUp.vue'
 import Carrito from './components/Carrito.vue'
+import Item from './components/Item.vue'
 
 const routes = [{
     path: '/',
@@ -11,13 +13,13 @@ const routes = [{
     component: App
   },
   {
-    path: '/user/logIn',
+    path: '/logIn',
     name: 'logIn',
     component: LogIn
   },
   {
 
-    path: '/user/signUp',
+    path: '/signUp',
     name: 'signUp',
     component: SignUp
   },
@@ -27,10 +29,16 @@ const routes = [{
     name: 'miniCart',
     component: Carrito
   },
+  {
+
+    path: '/frutas',
+    name: 'Item',
+    component: Item
+  },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

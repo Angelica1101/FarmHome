@@ -3,7 +3,7 @@
   <div class="carrito">
 
     <div class="contentbuton">
-        <button class="btnMasMen" v-on:click="miniMax" >VOLVER AL INICIO</button>
+        <router-link class="btnMasMen" to="/frutas" >VOLVER AL INICIO</router-link>
     </div>
 
     <h1 class="titleCarrito">Compras</h1>
@@ -55,28 +55,37 @@
         <div class="contenInfoCarrito">
 
           <div class="contAllProductCar">
+            <div class="contImageCarrito">
+
+              <img src="../assets/Screenshot_8.png" alt=".../" />
+
+            </div>
+
+            <div class="contetListProduct">
+
+            </div>
+
           </div>
 
           <div class="contDetalleProductCar">
 
-            
-            <span>
-              <h3>Producto</h3>
+            <span class="spanDatos">
+              <h3>PRODUCTO</h3>
               <p></p>
             </span>
 
-            <span>
-              <h3>Producto</h3>
+            <span class="spanDatos">
+              <h3>PRECIO</h3>
               <p></p>
             </span>
 
-            <span>
-              <h3>Producto</h3>
+            <span class="spanDatos">
+              <h3>CANTIDAD</h3>
               <p></p>
             </span>
 
-            <span>
-              <h3>Producto</h3>
+            <span class="spanDatos">
+              <h3>SUBTOTAL</h3>
               <p></p>
             </span>
 
@@ -137,6 +146,7 @@
 
   .btnMasMen{    
     border: none;
+    text-decoration: none;
     padding: 5px 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.692);
   }
@@ -160,6 +170,7 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
+    overflow: hidden;
   }
 
   .zonaVideoCarrito{
@@ -236,6 +247,7 @@
     width:100%;
     text-align:center;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .contentDatosCarrito{
@@ -248,18 +260,24 @@
 
   .contenInfoCarrito{
     width:60%;    
-    height:500px;
-    background:rgba(35, 10, 68, 0.651);  
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .contAllProductCar{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  .contImageCarrito{
+    width: 400px;
+    overflow: hidden;
+  }
+
+  .contImageCarrito img {
+    width: 100%;
+  }
+
+  .contetListProduct{
+    width: 400px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.692);
   }
 
   .contAllProductCar{
@@ -267,16 +285,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-right: 20px;
   }
 
   .contentDetallesCarrito{
     width:40%;
     height:500px;
-    background:rgba(199, 182, 221, 0.651);  
+    background: rgba(252, 21, 21, 0.692);
   }
 
-  .contDetalleProductCar span{
-    width: 100%;
+  .spanDatos{
+    background: rgba(219, 189, 21, 0.692);
     border-bottom: 1px solid grey;
   }
 
@@ -293,6 +312,12 @@
       width:100%;
     }
 
+  }
+
+  @media (max-width: 880px){
+    .zonRecomendacionCarrito{
+      width: 100%;
+    }
   }
   
 
